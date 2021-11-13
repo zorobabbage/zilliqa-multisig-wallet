@@ -1,6 +1,6 @@
 <template>
   <div class="wallet">
-    <h1 class="title">My Wallet</h1>
+    <h1 class="title">{{wallet.name?wallet.name:'My wallet'}}</h1>
     <h2 class="subtitle text-white">{{ bech32Address }}</h2>
     <div
       v-if="address"

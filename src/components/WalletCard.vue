@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="body" @click="openWallet">
-      <div class="title">My wallet</div>
+      <div class="title">{{wallet.name?wallet.name:'My wallet'}}</div>
       <div class="address mb-2">{{ wallet.contractId }}</div>
       <div class="title">Balance</div>
       <div class="balance mb-2">

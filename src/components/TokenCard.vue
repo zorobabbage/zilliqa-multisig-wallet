@@ -28,6 +28,7 @@
 <script>
 import { Zilliqa } from "@zilliqa-js/zilliqa";
 import plug from '@/assets/token.svg';
+import envizion from '@/assets/envizion.svg';
 
 export default {
   name: 'TokenCard',
@@ -47,7 +48,12 @@ export default {
   methods: {
     onErrorLoading(event) {
       if (!event.target.src.includes(plug)) {
-        event.target.src = plug;
+        
+        if(this.token.symbol === 'EVZ'){
+          event.target.src = envizion;
+        }else{
+          event.target.src = plug;
+        }
       }
     },
     async getBalance() {

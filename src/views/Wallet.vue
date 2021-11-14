@@ -105,7 +105,8 @@ export default {
       wallet: {
         balance: 0,
         owners_list: [],
-        signatures: null
+        signatures: null,
+        name:''
       },
       addFunds: false,
       addToken: false,
@@ -122,7 +123,8 @@ export default {
       localWallet: "wallet"
     }),
     ...mapGetters("wallets", {
-      getWalletOwnersList: "getOwnersList"
+      getWalletOwnersList: "getOwnersList",
+      myWallet: "wallet"
     })
   },
   methods: {
@@ -203,6 +205,9 @@ export default {
         }
 
         this.wallet.owners_list = this.getWalletOwnersList(toBech32Address(this.address));
+        
+        let myWallet=this.myWallet(toBech32Address(this.address));
+        this.wallet.name = myWallet.name;
       }
 
       const contractState = await this.zilliqa.blockchain.getSmartContractState(

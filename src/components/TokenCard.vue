@@ -28,8 +28,6 @@
 <script>
 import { Zilliqa } from "@zilliqa-js/zilliqa";
 import plug from '@/assets/token.svg';
-import envizion from '@/assets/envizion.svg';
-
 export default {
   name: 'TokenCard',
   props: ['token', 'network', 'address', 'selected'],
@@ -50,7 +48,7 @@ export default {
       if (!event.target.src.includes(plug)) {
         
         if(this.token.symbol === 'EVZ'){
-          event.target.src = envizion;
+          event.target.src = "https://envizion.world/envizion.svg";
         }else{
           event.target.src = plug;
         }
